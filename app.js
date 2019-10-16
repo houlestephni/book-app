@@ -24,23 +24,29 @@ $(() => {
       //   console.log(currentRank);
       let isbn = book.isbns[0].isbn10;
       //   console.log(isbn);
-
+      const $div = $("<div>")
+        .attr("id", book.rank)
+        .addClass("card")
+        .appendTo(".container");
       const $title = $("<h1>")
         .addClass("title")
         .text(bookTitle)
-        .appendTo(".container");
+        .appendTo($div);
       const $author = $("<p>")
         .addClass("author")
         .text(author)
-        .appendTo(".container");
+        .appendTo($div);
       const $rank = $("<p>")
         .addClass("ranking")
         .text(currentRank)
-        .appendTo(".container");
+        .appendTo($div);
       const $cover = $("<img>")
+        .attr("id", "cover-" + book.rank)
         .addClass("book-cover")
-        .attr("src", "http://via.placeholder.com/240x260")
-        .appendTo(".container");
+        .attr("src", "http://via.placeholder.com/128x195")
+        .appendTo($div);
+
+      updateCover(book.rank, isbn);
     });
   }
 
@@ -53,12 +59,8 @@ $(() => {
       })
       .then(data => {
         let img = data.items[0].volumeInfo.imageLinks.thumbnail;
-
         console.log(img);
-
-        // $img.attr();
-        //   $(img.replace(/^http:\/\//i, 'https://');
-        //   $('#cover-' + id).attr('src', img);
+        $("#cover-" + id).attr("src", img);
       });
   }
 });
