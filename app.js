@@ -40,7 +40,7 @@ $(() => {
         .addClass("title")
         .text(bookTitle)
         .appendTo($div);
-      const $author = $("<p>")
+      const $author = $("<h2>")
         .addClass("author")
         .text(author)
         .appendTo($div);
@@ -54,7 +54,7 @@ $(() => {
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
 
-      updateCover(book.rank, isbn, "fiction");
+      // updateCover(book.rank, isbn, "fiction");
     });
   }
   const getNonfiction = fetch(
@@ -94,7 +94,7 @@ $(() => {
         .addClass("title")
         .text(bookTitle2)
         .appendTo($div);
-      const $author = $("<p>")
+      const $author = $("<h2>")
         .addClass("author")
         .text(author)
         .appendTo($div);
@@ -108,7 +108,7 @@ $(() => {
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
 
-      updateCover(book.rank, isbn, "nonfiction");
+      // updateCover(book.rank, isbn, "nonfiction");
     });
   }
   function updateCover(id, isbn, genre) {
