@@ -2,18 +2,11 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #fiction-list,
 #nonfiction-list {
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.title {
-  padding: 20px 0px;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-h2 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 form {
@@ -21,22 +14,63 @@ form {
 }
 .container {
   background-color: cadetblue;
-  display: flex;
+  /* display: inline; */
 }
-.fiction {
+
+#fiction {
   background-color: azure;
   display: flex;
-  flex-direction: column;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
-.nonfiction {
+#fiction-list {
+  font-size: 100%;
+  text-align: start;
+  margin: 25px 0 0 15px;
+}
+#nonfiction-list {
+  font-size: 100%;
+  text-align: start;
+  margin: 25px 0 0 15px;
+}
+#nonfiction {
   background-color: whitesmoke;
   display: flex;
-  flex-direction: column;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.scrolling-wrapper {
+  height: 400px;
+  width: 80%;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 .card {
   background-color: cornsilk;
-  border-radius: 20%;
+  border-radius: 15px;
+  height: 85%;
+  width: 300px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+.title {
+  text-align: center;
+  font-size: 100%;
+}
+.author {
+  text-align: center;
+  font-size: 60%;
+}
+.ranking {
+  font-size: 80%;
 }
 .book-cover {
-  display: flex;
+  display: block;
+  margin: auto;
+  padding: 20px;
 }

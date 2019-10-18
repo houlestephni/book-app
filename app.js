@@ -14,13 +14,15 @@ $(() => {
       updateFiction(json);
       //   console.log(json);
     });
-  const $fiction = $("<div>")
-    .attr("id", "hardcover-fiction")
-    .appendTo(".fiction");
+
   const $listName = $("<h1>")
     .text("Top Hardcover Fiction")
     .attr("id", "fiction-list")
-    .appendTo($fiction);
+    .appendTo("#fiction");
+  const $fiction = $("<div>")
+    .attr("id", "hardcover-fiction")
+    .addClass("scrolling-wrapper")
+    .appendTo("#fiction");
 
   function updateFiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
@@ -69,13 +71,15 @@ $(() => {
       updateNonfiction(json);
       console.log(json);
     });
-  const $nonFiction = $("<div>")
-    .attr("id", "hardcover-nonfiction")
-    .appendTo(".nonfiction");
+
   const $listName2 = $("<h1>")
     .text("Top Hardcover Nonfiction")
     .attr("id", "nonfiction-list")
-    .appendTo($nonFiction);
+    .appendTo("#nonfiction");
+  const $nonFiction = $("<div>")
+    .attr("id", "hardcover-nonfiction")
+    .addClass("scrolling-wrapper")
+    .appendTo("#nonfiction");
 
   function updateNonfiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
