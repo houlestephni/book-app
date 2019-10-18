@@ -14,37 +14,41 @@ form {
 }
 .container {
   background-color: cadetblue;
-  /* display: inline; */
+  display: inline;
 }
 
 #fiction {
   background-color: azure;
-  display: flex;
-  margin: auto;
+  /* display: flex; */
   flex-direction: row;
   flex-wrap: nowrap;
 }
 #fiction-list {
+  background-color: thistle;
+  height: 40px;
   font-size: 100%;
   text-align: start;
   margin: 25px 0 0 15px;
 }
 #nonfiction-list {
+  background-color: thistle;
+  height: 40px;
   font-size: 100%;
   text-align: start;
   margin: 25px 0 0 15px;
 }
 #nonfiction {
   background-color: whitesmoke;
-  display: flex;
-  margin: auto;
+  /* display: flex; */
+  /* margin: auto; */
   flex-direction: row;
   flex-wrap: nowrap;
 }
 .scrolling-wrapper {
+  margin: auto;
   height: 400px;
-  width: 80%;
-  display: flex;
+  width: 75%;
+  /* display: flex; */
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
@@ -53,24 +57,27 @@ form {
   background-color: cornsilk;
   border-radius: 15px;
   height: 85%;
-  width: 300px;
+  width: 350px;
   display: inline-block;
-  margin: 10px;
-  padding: 10px;
+  margin: 15px;
+  padding: 15px;
 }
 .title {
   text-align: center;
-  font-size: 100%;
+  font-size: 1.1em;
+  /* white-space: normal; */
 }
 .author {
   text-align: center;
-  font-size: 60%;
+  font-size: 1em;
+  /* white-space: normal; */
 }
 .ranking {
-  font-size: 80%;
+  font-weight: bold;
+  margin: auto 0;
+  padding: 5px;
 }
 .book-cover {
   display: block;
-  margin: auto;
-  padding: 20px;
+  margin: 0 auto;
 }
