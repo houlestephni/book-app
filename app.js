@@ -38,6 +38,10 @@ $(() => {
         .attr("id", book.rank)
         .addClass("card")
         .appendTo($fiction);
+      const $rank = $("<p>")
+        .addClass("ranking")
+        .text("#" + currentRank)
+        .appendTo($div);
       const $title = $("<h1>")
         .addClass("title")
         .text(bookTitle)
@@ -46,17 +50,28 @@ $(() => {
         .addClass("author")
         .text(author)
         .appendTo($div);
-      const $rank = $("<p>")
-        .addClass("ranking")
-        .text(currentRank)
-        .appendTo($div);
+
       const $cover = $("<img>")
         .attr("id", "fictionCover-" + book.rank)
         .addClass("book-cover")
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
 
-      // updateCover(book.rank, isbn, "fiction");
+      let buyLink = book.amazon_product_url;
+      // console.log(buyLink);
+      const link = $("<a/>")
+        .attr("href", buyLink)
+        .html("BUY")
+        .appendTo($div);
+
+      let summary = book.book_details[0].description;
+      // console.log(summary);
+      const $p = $("<p>").text(summary);
+      $(".book-cover").hover(function() {
+        $(this).append($p);
+      });
+
+      updateCover(book.rank, isbn, "fiction");
     });
   }
   const getNonfiction = fetch(
@@ -94,6 +109,10 @@ $(() => {
         .attr("id", book.rank)
         .addClass("card")
         .appendTo($nonFiction);
+      const $rank = $("<p>")
+        .addClass("ranking")
+        .text("#" + currentRank)
+        .appendTo($div);
       const $title = $("<h1>")
         .addClass("title")
         .text(bookTitle2)
@@ -102,17 +121,18 @@ $(() => {
         .addClass("author")
         .text(author)
         .appendTo($div);
-      const $rank = $("<p>")
-        .addClass("ranking")
-        .text(currentRank)
-        .appendTo($div);
       const $cover = $("<img>")
         .attr("id", "nonfictionCover-" + book.rank)
         .addClass("book-cover")
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
+      let buyLink = book.amazon_product_url;
+      const link = $("<a/>")
+        .attr("href", buyLink)
+        .html("BUY")
+        .appendTo($div);
 
-      // updateCover(book.rank, isbn, "nonfiction");
+      updateCover(book.rank, isbn, "nonfiction");
     });
   }
   function updateCover(id, isbn, genre) {
@@ -137,4 +157,23 @@ $(() => {
         }
       });
   }
+  // function description(isbn) {
+  //   fetch(
+  //     "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn,
+  //     //  +"&key=" +
+  //     // googleBooksKey,
+  //     {
+  //       method: "get"
+  //     }
+  //   )
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(data => {
+  //       let summary = data.items[0].volumeInfo.description;
+  //       // console.log(summary);
+
+  //       $(summary + id).appendTo$(".review1");
+  //     });
+  // }
 });
