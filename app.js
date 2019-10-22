@@ -30,6 +30,7 @@ $(() => {
       let author = book.book_details[0].author;
       let currentRank = book.rank;
       let isbn = book.isbns[0].isbn10;
+      let summary = book.book_details[0].description;
 
       const $div = $("<div>")
         .attr("id", book.rank)
@@ -51,6 +52,8 @@ $(() => {
       const $cover = $("<img>")
         .attr("id", "fictionCover-" + book.rank)
         .addClass("book-cover")
+        .addClass("Tooltip")
+        .attr("title", summary)
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
 
@@ -59,15 +62,6 @@ $(() => {
         .attr("href", buyLink)
         .html("BUY")
         .appendTo($div);
-
-      let summary = book.book_details[0].description;
-      // console.log(summary);
-      const $p = $("<p>")
-        .text(summary)
-        .appendTo();
-      $(".book-cover").hover(function() {
-        $(this).text($p);
-      });
 
       updateCover(book.rank, isbn, "fiction");
       // description(bookTitle, isbn);
@@ -101,6 +95,8 @@ $(() => {
       let author = book.book_details[0].author;
       let currentRank = book.rank;
       let isbn = book.isbns[0].isbn10;
+      let summary = book.book_details[0].description;
+
       const $div = $("<div>")
         .attr("id", book.rank)
         .addClass("card")
@@ -120,6 +116,8 @@ $(() => {
       const $cover = $("<img>")
         .attr("id", "nonfictionCover-" + book.rank)
         .addClass("book-cover")
+        .addClass("Tooltip")
+        .attr("title", summary)
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
       let buyLink = book.amazon_product_url;
