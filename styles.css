@@ -53,22 +53,29 @@ form {
 }
 .scrolling-wrapper {
   margin: auto;
-  height: 400px;
+  /* height: 20%; */
   width: 75%;
-  /* display: flex; */
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  /* flex-direction: row;
+  overflow-x: auto;
   overflow-y: hidden;
-  white-space: nowrap;
+  white-space: nowrap; */
 }
 .card {
   background-color: rgba(245, 245, 245, 0.783);
   border-radius: 15px;
-  height: 85%;
-  width: 350px;
-  display: inline-block;
-  margin: 15px;
-  padding: 15px;
   border: black 1px solid;
+  flex: 0 0 auto;
+  /* height: 85%; */
+  width: 200px;
+  /* display: inline-flexbox; */
+  /* flex-direction: row; */
+  /* flex-basis: 1; */
+  margin: 15px;
+  padding: 20px;
+  font-size: 100%;
 }
 .title {
   text-align: center;
@@ -95,6 +102,7 @@ a {
   display: block;
   color: darkslategray;
   font-weight: bold;
+  padding: 10px 0;
 }
 a:hover {
   font-weight: bolder;

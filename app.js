@@ -27,12 +27,9 @@ $(() => {
   function updateFiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
       let bookTitle = book.book_details[0].title;
-      //   console.log(bookTitle);
       let author = book.book_details[0].author;
       let currentRank = book.rank;
-      //   console.log(currentRank);
       let isbn = book.isbns[0].isbn10;
-      //   console.log(isbn);
 
       const $div = $("<div>")
         .attr("id", book.rank)
@@ -58,7 +55,6 @@ $(() => {
         .appendTo($div);
 
       let buyLink = book.amazon_product_url;
-      // console.log(buyLink);
       const link = $("<a/>")
         .attr("href", buyLink)
         .html("BUY")
@@ -66,12 +62,15 @@ $(() => {
 
       let summary = book.book_details[0].description;
       // console.log(summary);
-      const $p = $("<p>").text(summary);
+      const $p = $("<p>")
+        .text(summary)
+        .appendTo();
       $(".book-cover").hover(function() {
-        $(this).append($p);
+        $(this).text($p);
       });
 
-      updateCover(book.rank, isbn, "fiction");
+      // updateCover(book.rank, isbn, "fiction");
+      // description(bookTitle, isbn);
     });
   }
   const getNonfiction = fetch(
@@ -84,7 +83,7 @@ $(() => {
     })
     .then(json => {
       updateNonfiction(json);
-      console.log(json);
+      // console.log(json);
     });
 
   const $listName2 = $("<h1>")
@@ -99,12 +98,9 @@ $(() => {
   function updateNonfiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
       let bookTitle2 = book.book_details[0].title;
-      //   console.log(bookTitle2);
       let author = book.book_details[0].author;
       let currentRank = book.rank;
-      //   console.log(currentRank);
       let isbn = book.isbns[0].isbn10;
-      //   console.log(isbn);
       const $div = $("<div>")
         .attr("id", book.rank)
         .addClass("card")
@@ -132,7 +128,7 @@ $(() => {
         .html("BUY")
         .appendTo($div);
 
-      updateCover(book.rank, isbn, "nonfiction");
+      // updateCover(book.rank, isbn, "nonfiction");
     });
   }
   function updateCover(id, isbn, genre) {
@@ -157,23 +153,20 @@ $(() => {
         }
       });
   }
-  // function description(isbn) {
-  //   fetch(
-  //     "https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn,
-  //     //  +"&key=" +
-  //     // googleBooksKey,
-  //     {
-  //       method: "get"
-  //     }
-  //   )
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(data => {
-  //       let summary = data.items[0].volumeInfo.description;
-  //       // console.log(summary);
-
-  //       $(summary + id).appendTo$(".review1");
-  //     });
-  // }
+  function description(bookTitle, isbn) {
+    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn, {
+      method: "get"
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        description(json);
+        console.log(json);
+        //   .then(data => {
+        // let summary = data.items[0].volumeInfo.description;
+        // // console.log(summary);
+        // $(summary).appendTo(".review");
+      });
+  }
 });
