@@ -69,7 +69,7 @@ $(() => {
         $(this).text($p);
       });
 
-      // updateCover(book.rank, isbn, "fiction");
+      updateCover(book.rank, isbn, "fiction");
       // description(bookTitle, isbn);
     });
   }
@@ -128,7 +128,7 @@ $(() => {
         .html("BUY")
         .appendTo($div);
 
-      // updateCover(book.rank, isbn, "nonfiction");
+      updateCover(book.rank, isbn, "nonfiction");
     });
   }
   function updateCover(id, isbn, genre) {
