@@ -8,7 +8,6 @@ body {
 nav {
   font-size: 2.5em;
   text-align: center;
-  /* position: fixed; */
   font-family: "Oswald", sans-serif;
   padding: 15px;
 }
@@ -16,8 +15,6 @@ nav {
 #nonfiction-list {
   text-align: center;
 }
-form {
-  float: inline-end;
 }
 .container {
   /* background-color: cadetblue; */
@@ -80,12 +77,10 @@ form {
 .title {
   text-align: center;
   font-size: 1.1em;
-  /* white-space: normal; */
 }
 .author {
   text-align: center;
   font-size: 1em;
-  /* white-space: normal; */
 }
 .ranking {
   font-weight: bold;
@@ -110,4 +105,65 @@ a:hover {
 }
 footer {
   margin: 50px 0px;
+}
+.right-button {
+  position: sticky;
+  position: -webkit-sticky;
+  left: 0;
+  text-emphasis: bold;
+  font-size: large;
+  background: rgba(169, 169, 169, 0.2);
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  margin: auto;
+  transition: all 0.3s ease-out
+}
+.right-button:hover,
+.right-button:focus,
+.right-button:active {
+  background:  rgba(169, 169, 169, 0.7);
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+.left-button {
+  position: sticky;
+  position: -webkit-sticky;
+  right: 0;
+  text-emphasis: bold;
+  font-size: large;
+  background: rgba(169, 169, 169, 0.2);
+  border: none;
+  border-radius: 50%;
+  height: 40px;
+  margin: auto;
+}
+.left-button:hover,
+.left-button:focus,
+.left-button:active {
+  background:  rgba(169, 169, 169, 0.7);
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+
+
+@media (max-width: 600px) {
+  nav {
+    font-size: 1.5em;
+  }
+  .scrolling-wrapper {
+    width: 100%;
+    
+  }
+  #fiction-list,
+  #nonfiction-list {
+    height: 15px;
+    margin: 15px 0px;
+  }
+  .card {
+    padding: 5%;
+  }
+  button {
+    display: none;
+  }
 }

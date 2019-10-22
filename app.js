@@ -23,6 +23,19 @@ $(() => {
     .attr("id", "hardcover-fiction")
     .addClass("scrolling-wrapper")
     .appendTo("#fiction");
+  const $buttonRight = $("<button>")
+    .addClass("right-button")
+    .html(">")
+    .prependTo("#hardcover-fiction");
+  $(".right-button").click(function() {
+    event.preventDefault();
+    $("#hardcover-fiction").animate(
+      {
+        scrollLeft: "+=280px"
+      },
+      "slow"
+    );
+  });
 
   function updateFiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
@@ -63,10 +76,24 @@ $(() => {
         .html("BUY")
         .appendTo($div);
 
-      updateCover(book.rank, isbn, "fiction");
+      // updateCover(book.rank, isbn, "fiction");
       // description(bookTitle, isbn);
     });
+    const $buttonLeft = $("<button>")
+      .addClass("left-button")
+      .html("<")
+      .appendTo("#hardcover-fiction");
+    $(".left-button").click(function() {
+      event.preventDefault();
+      $("#hardcover-fiction").animate(
+        {
+          scrollLeft: "-=280px"
+        },
+        "slow"
+      );
+    });
   }
+
   const getNonfiction = fetch(
     "https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-nonfiction&api-key=" +
       nytKey,
@@ -88,6 +115,19 @@ $(() => {
     .attr("id", "hardcover-nonfiction")
     .addClass("scrolling-wrapper")
     .appendTo("#nonfiction");
+  const $buttonRight2 = $("<button>")
+    .addClass("right-button")
+    .html(">")
+    .prependTo("#hardcover-nonfiction");
+  $(".right-button").click(function() {
+    event.preventDefault();
+    $("#hardcover-nonfiction").animate(
+      {
+        scrollLeft: "+=280px"
+      },
+      "slow"
+    );
+  });
 
   function updateNonfiction(nytimesBestSellers) {
     nytimesBestSellers.results.forEach(function(book) {
@@ -116,7 +156,7 @@ $(() => {
       const $cover = $("<img>")
         .attr("id", "nonfictionCover-" + book.rank)
         .addClass("book-cover")
-        .addClass("Tooltip")
+        .addClass("tooltip")
         .attr("title", summary)
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
@@ -126,7 +166,20 @@ $(() => {
         .html("BUY")
         .appendTo($div);
 
-      updateCover(book.rank, isbn, "nonfiction");
+      // updateCover(book.rank, isbn, "nonfiction");
+    });
+    const $buttonLeft2 = $("<button>")
+      .addClass("left-button")
+      .html("<")
+      .appendTo("#hardcover-nonfiction");
+    $(".left-button").click(function() {
+      event.preventDefault();
+      $("#hardcover-nonfiction").animate(
+        {
+          scrollLeft: "-=280px"
+        },
+        "slow"
+      );
     });
   }
   function updateCover(id, isbn, genre) {
