@@ -69,15 +69,18 @@ $(() => {
         .attr("title", summary)
         .attr("src", "http://via.placeholder.com/128x195")
         .appendTo($div);
+      let crawdads =
+        "http://books.google.com/books/content?id=CGVDDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api";
+      $("img#fictionCover-2").attr("src", crawdads);
 
       let buyLink = book.amazon_product_url;
       const link = $("<a/>")
         .attr("href", buyLink)
+        .addClass("amazonLink")
         .html("BUY")
         .appendTo($div);
 
-      // updateCover(book.rank, isbn, "fiction");
-      // description(bookTitle, isbn);
+      updateCover(book.rank, isbn, "fiction");
     });
     const $buttonLeft = $("<button>")
       .addClass("left-button")
@@ -116,10 +119,10 @@ $(() => {
     .addClass("scrolling-wrapper")
     .appendTo("#nonfiction");
   const $buttonRight2 = $("<button>")
-    .addClass("right-button")
+    .addClass("right-button2")
     .html(">")
     .prependTo("#hardcover-nonfiction");
-  $(".right-button").click(function() {
+  $(".right-button2").click(function() {
     event.preventDefault();
     $("#hardcover-nonfiction").animate(
       {
@@ -163,16 +166,21 @@ $(() => {
       let buyLink = book.amazon_product_url;
       const link = $("<a/>")
         .attr("href", buyLink)
+        .addClass("amazonLink")
         .html("BUY")
         .appendTo($div);
 
-      // updateCover(book.rank, isbn, "nonfiction");
+      let overTop =
+        "http://books.google.com/books/content?id=jWlYwAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api";
+      $("img#nonfictionCover-13").attr("src", overTop);
+
+      updateCover(book.rank, isbn, "nonfiction");
     });
     const $buttonLeft2 = $("<button>")
-      .addClass("left-button")
+      .addClass("left-button2")
       .html("<")
       .appendTo("#hardcover-nonfiction");
-    $(".left-button").click(function() {
+    $(".left-button2").click(function() {
       event.preventDefault();
       $("#hardcover-nonfiction").animate(
         {
@@ -202,22 +210,6 @@ $(() => {
         } else if (genre === "nonfiction") {
           $("#nonfictionCover-" + id).attr("src", img);
         }
-      });
-  }
-  function description(bookTitle, isbn) {
-    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:" + isbn, {
-      method: "get"
-    })
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        description(json);
-        console.log(json);
-        //   .then(data => {
-        // let summary = data.items[0].volumeInfo.description;
-        // // console.log(summary);
-        // $(summary).appendTo(".review");
       });
   }
 });
