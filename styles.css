@@ -9,13 +9,28 @@ nav {
   font-size: 2.5em;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  padding: 15px;
+  padding: 10px;
+  margin: auto;
+}
+#icon {
+  margin: -45px auto 35px auto;
+  display: block;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+}
+#intro {
+  display: block;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  padding: 40px;
 }
 #fiction-list,
 #nonfiction-list {
   text-align: center;
 }
-}
+
 .container {
   /* background-color: cadetblue; */
   display: inline;
@@ -91,7 +106,7 @@ nav {
   margin: 0 auto;
   padding: 5px;
 }
-a {
+.amazonLink {
   text-align: center;
   text-decoration: none;
   display: block;
@@ -99,14 +114,19 @@ a {
   font-weight: bold;
   padding: 10px 0;
 }
+a {
+  text-decoration: none;
+}
 a:hover {
   font-weight: bolder;
   text-decoration: underline;
 }
 footer {
   margin: 50px 0px;
+  /* background-color: rgb(28, 177, 200); */
 }
-.right-button {
+.right-button,
+.right-button2 {
   position: sticky;
   position: -webkit-sticky;
   left: 0;
@@ -117,16 +137,24 @@ footer {
   border-radius: 50%;
   height: 40px;
   margin: auto;
-  transition: all 0.3s ease-out
+  transition: all 0.3s ease-out;
 }
 .right-button:hover,
 .right-button:focus,
 .right-button:active {
-  background:  rgba(169, 169, 169, 0.7);
+  background: rgba(169, 169, 169, 0.7);
   color: #000;
   transition: all 0.5s ease-in;
 }
-.left-button {
+.right-button2:hover,
+.right-button2:focus,
+.right-button2:active {
+  background: rgba(169, 169, 169, 0.7);
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+.left-button,
+.left-button2 {
   position: sticky;
   position: -webkit-sticky;
   right: 0;
@@ -141,19 +169,30 @@ footer {
 .left-button:hover,
 .left-button:focus,
 .left-button:active {
-  background:  rgba(169, 169, 169, 0.7);
+  background: rgba(169, 169, 169, 0.7);
   color: #000;
   transition: all 0.5s ease-in;
 }
-
+.left-button2:hover,
+.left-button2:focus,
+.left-button2:active {
+  background: rgba(169, 169, 169, 0.7);
+  color: #000;
+  transition: all 0.5s ease-in;
+}
+h3 {
+  text-align: center;
+}
 
 @media (max-width: 600px) {
   nav {
     font-size: 1.5em;
   }
+  #icon {
+    padding: 20px 0 0 0;
+  }
   .scrolling-wrapper {
     width: 100%;
-    
   }
   #fiction-list,
   #nonfiction-list {
