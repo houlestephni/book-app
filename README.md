@@ -19,3 +19,8 @@ Using APIs to create an app that will help readers discover their next read when
 [Google Books](https://developers.google.com/books)
 
 [New York Times Books](https://developer.nytimes.com/docs/books-product/1/overview)
+
+---
+## Created By
+
+Stephni Houle
