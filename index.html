@@ -15,25 +15,44 @@
       charset="utf-8"
     ></script>
     <script src="app.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/images/site.webmanifest" />
     <title>Books</title>
   </head>
   <body>
     <nav>
       <h1>Today's Most Popular Books</h1>
-      <hr />
-    </nav>
+    </nav>  <img src="images/book-icon.png" id='icon' alt="Open Book Icon"><hr />
+    <h2 id='intro'>Are you looking for a new book to read? Scroll through the New York Times Best Sellers to see this week's most popular fiction and nonfiction books.</h2>
     <div class="container">
       <div id="fiction"></div>
       <br />
       <div id="nonfiction"></div>
     </div>
     <br />
+    <h3>Do you want to see more books? Check out more lists at <a href="https://www.nytimes.com/books/best-sellers/">The New York Times</a>.</h3>
     <hr />
     <footer>
-      <img
+      <a href= "https://developer.nytimes.com/docs/books-product/1/overview"><img
         src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png?v=1539041473000"
         alt="NYT Developers logo"
-      />
+      /></a></footer>
     </footer>
   </body>
 </html>
