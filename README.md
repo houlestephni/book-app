@@ -14,7 +14,7 @@ Using APIs to create an app that will help readers discover their next read when
 * JQuery
 
 ---
-### APIs
+### APIs:
 
 [New York Times Books](https://developer.nytimes.com/docs/books-product/1/overview)
 
@@ -25,6 +25,6 @@ NYT Best Sellers Lists with book details and Amazon product URLs
 Used IBSN to capture book covers
 
 ---
-## Created By
+## Created By:
 
 Stephni Houle
