@@ -12,7 +12,6 @@ $(() => {
     })
     .then(json => {
       updateFiction(json);
-      //   console.log(json);
     });
 
   const $listName = $("<h1>")
@@ -71,7 +70,7 @@ $(() => {
         .appendTo($div);
       let crawdads =
         "http://books.google.com/books/content?id=CGVDDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api";
-      $("img#fictionCover-2").attr("src", crawdads);
+      $("img#fictionCover-1").attr("src", crawdads);
 
       let buyLink = book.amazon_product_url;
       const link = $("<a/>")
@@ -169,10 +168,6 @@ $(() => {
         .addClass("amazonLink")
         .html("BUY")
         .appendTo($div);
-
-      let overTop =
-        "http://books.google.com/books/content?id=jWlYwAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api";
-      $("img#nonfictionCover-13").attr("src", overTop);
 
       updateCover(book.rank, isbn, "nonfiction");
     });
